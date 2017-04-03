@@ -16,7 +16,11 @@ futures = "0.1"
 lazy_static = "0.2"
 elementtree = "0.2.0"
 url = "1.4.0"
-
-[dev-dependencies]
+clap = "2.21.2"
 tokio-core = "0.1.6"
 hyper-tls = { path = "hyper-tls", version = "0.0.0" }
+
+[[bin]]
+name = "cogs"
+test = false
+doc = false
