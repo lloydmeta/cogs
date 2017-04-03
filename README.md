@@ -8,16 +8,18 @@ WIP
 
 ## Library
 
-```toml
-cogs = $latest_version
-```
+You'll need to clone this repo and specify a path.
 
-[Docs](https://docs.rs/cogs)
+```toml
+cogs = { path = "$cloned_path" }
+```
 
 ## Command line
 
+Clone this repo, cd into it, then run
+
 ```
-cargo install cogs
+cargo install
 ```
 
 Then either set an `AZURE_SUBSCRIPTION_KEY` in your environment, or pass it in via command line.

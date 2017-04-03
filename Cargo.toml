@@ -14,14 +14,14 @@ travis-ci = { repository = "lloydmeta/cogs" }
 [dependencies]
 time = "0.1"
 #Use crates.io version when it's published
-hyper= { path = "hyper", version = "0.11.0-a.0" }
+hyper = { git = "https://github.com/hyperium/hyper.git" }
 futures = "0.1"
 lazy_static = "0.2"
 elementtree = "0.2.0"
 url = "1.4.0"
 clap = "2.21.2"
 tokio-core = "0.1.6"
-hyper-tls = { path = "hyper-tls", version = "0.0.0" }
+hyper-tls = { git = "https://github.com/hyperium/hyper-tls.git" }
 
 [[bin]]
 name = "cogs"
