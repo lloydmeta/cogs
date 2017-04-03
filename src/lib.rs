@@ -3,7 +3,6 @@ extern crate time;
 extern crate hyper;
 extern crate futures;
 extern crate core;
-extern crate base64;
 #[macro_use]
 extern crate lazy_static;
 extern crate elementtree;
