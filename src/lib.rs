@@ -1,3 +1,4 @@
+//! Cogs is a non-blocking client for Microsoft cognition services
 extern crate time;
 #[macro_use]
 extern crate hyper;

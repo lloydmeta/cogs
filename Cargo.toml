@@ -2,8 +2,11 @@
 name = "cogs"
 version = "0.0.3"
 authors = ["Lloyd <lloydmeta@gmail.com>"]
-description = "Client for accessing MS Cognition API"
+description = "Non-blocking client for Microsoft Cognition API"
 license = "MIT"
+documentation = "https://docs.rs/cogs"
+repository = "https://github.com/lloydmeta/cogs"
+keywords = ["cognitive services", "client", "Microsoft", "non-blocking", "hyper"]
 
 [badges]
 travis-ci = { repository = "lloydmeta/cogs" }
