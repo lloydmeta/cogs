@@ -1,8 +1,10 @@
-# Cogs [![Build Status](https://travis-ci.org/lloydmeta/cogs.svg?branch=master)](https://travis-ci.org/lloydmeta/cogs) [![Crates.io](https://img.shields.io/crates/v/cogs.svg)](https://crates.io/crates/cogs)
+# Cogs [![Build Status](https://travis-ci.org/lloydmeta/cogs.svg?branch=master)](https://travis-ci.org/lloydmeta/cogs)
 
 Non-blocking Microsoft Cognition APIs client for Rust.
 
 WIP
+
+_Note_: Since Tokio-based Hyper is not yet published to Crates.io, this lib hasn't been published yet either.
 
 # Usage
 
