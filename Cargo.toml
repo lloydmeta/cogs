@@ -1,0 +1,24 @@
+[package]
+name = "cogs"
+version = "0.0.3"
+authors = ["Lloyd <lloydmeta@gmail.com>"]
+description = "Client for accessing MS Cognition API"
+license = "MIT"
+
+[badges]
+travis-ci = { repository = "lloydmeta/cogs" }
+
+
+[dependencies]
+time = "0.1"
+#Use crates.io version when it's published
+hyper= { path = "hyper", version = "0.11.0-a.0" }
+futures = "0.1"
+base64 = "0.4.1"
+lazy_static = "0.2"
+elementtree = "0.2.0"
+url = "1.4.0"
+
+[dev-dependencies]
+tokio-core = "0.1.6"
+hyper-tls = { path = "hyper-tls", version = "0.0.0" }
