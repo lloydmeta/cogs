@@ -7,7 +7,7 @@ extern crate hyper_tls;
 use std::io::{self};
 use clap::{Arg, App};
 use cogs::engine::*;
-use cogs::cogs::translation::*;
+use cogs::translation::*;
 use hyper::client::*;
 
 const FROM_KEY: &'static str = "from";

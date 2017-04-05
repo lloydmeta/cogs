@@ -7,7 +7,12 @@ use hyper::client::{Request, Response};
 use futures::Future;
 use super::engine;
 
-/// Trait representing something that can be turned into a Cognitive Service endpoint
+/// Trait representing something that can be turned into a Cognitive Service endpoint.
+///
+/// In essence, it is capable of of
+///
+///   1. Transforming from your data structure to a hyper::Request
+///   2. Transforming from a Result<hyper::Response, Error> -> Future<Item, Error>
 ///
 /// # Examples
 ///
