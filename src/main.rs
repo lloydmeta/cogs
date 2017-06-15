@@ -126,10 +126,10 @@ fn main() {
 
 }
 
-fn build_engine
-    (sub_key: SubscriptionKey)
-     -> Result<(tokio_core::reactor::Core, Engine<hyper_tls::HttpsConnector<HttpConnector>>),
-               native_tls::Error> {
+fn build_engine(sub_key: SubscriptionKey)
+                -> Result<(tokio_core::reactor::Core,
+                           Engine<hyper_tls::HttpsConnector<HttpConnector>>),
+                          native_tls::Error> {
     let core = tokio_core::reactor::Core::new().unwrap();
     let handle = core.handle();
     let client = Client::configure()
