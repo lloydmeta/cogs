@@ -1,6 +1,6 @@
 [package]
 name = "cogs"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["Lloyd <lloydmeta@gmail.com>"]
 description = "Non-blocking client for Microsoft Cognition API"
 license = "MIT"
@@ -13,15 +13,15 @@ travis-ci = { repository = "lloydmeta/cogs" }
 
 [dependencies]
 time = "0.1"
-#Use crates.io version when it's published
-hyper = { git = "https://github.com/hyperium/hyper.git" }
+hyper = "0.11"
 futures = "0.1"
 lazy_static = "0.2"
 elementtree = "0.2.0"
 url = "1.4.0"
 clap = "2.21.2"
 tokio-core = "0.1.6"
-hyper-tls = { git = "https://github.com/hyperium/hyper-tls.git" }
+hyper-tls = "0.1"
+native-tls = "0.1"
 
 [[bin]]
 name = "cogs"

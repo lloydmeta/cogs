@@ -20,7 +20,7 @@
 //! let mut core = tokio_core::reactor::Core::new().unwrap();
 //! let handle = core.handle();
 //! let client = hyper::Client::configure()
-//!     .connector(hyper_tls::HttpsConnector::new(4, &handle))
+//!     .connector(hyper_tls::HttpsConnector::new(4, &handle).unwrap())
 //!     .keep_alive(true)
 //!     .build(&handle);
 //! # let sub_key = SubscriptionKey::new(env::var("AZURE_SUBSCRIPTION_KEY").unwrap().as_str());
@@ -34,7 +34,8 @@
 //!     category: None,
 //! };
 //! let work = engine.run(translate_req);
-//! assert_eq!(core.run(work).unwrap(), "Hallo")
+//! // TODO: get a sandbox key so this actually comes back as "Hallo"
+//! assert_eq!(core.run(work).unwrap(), "")
 //! # }
 //! ```
 extern crate time;

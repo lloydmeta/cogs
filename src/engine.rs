@@ -51,7 +51,7 @@ impl<Connector> Engine<Connector>
     /// # use cogs::engine::*;
     /// # use hyper_tls;
     /// let client = hyper::Client::configure()
-    ///     .connector(hyper_tls::HttpsConnector::new(4, &handle))
+    ///     .connector(hyper_tls::HttpsConnector::new(4, &handle).unwrap())
     ///     .keep_alive(true)
     ///     .build(&handle);
     /// let credentials = Credentials::new(SubscriptionKey::new("abc123"));
@@ -135,15 +135,17 @@ impl<Connector> Engine<Connector>
                                                                           ISSUE_TOKEN_URI.clone());
                                 {
                                     let headers = req.headers_mut();
-                                    headers.set(SubscriptionKeyHeader(creds.subscription_key
+                                    headers.set(SubscriptionKeyHeader(creds
+                                                                          .subscription_key
                                                                           .0
                                                                           .clone()));
                                     headers.set(ContentLength(0));
                                 }
                                 // Set the renewing token flag before hitting any async barriers
                                 creds.renewing_token = true;
-                                let req_f =
-                                    self.client.request(req).map_err(|e| Error::HyperError(e));
+                                let req_f = self.client
+                                    .request(req)
+                                    .map_err(|e| Error::HyperError(e));
                                 let creds_ref_err = self.credentials.clone();
                                 let creds_ref = self.credentials.clone();
                                 let f = req_f.and_then(|r| {
@@ -270,7 +272,7 @@ pub struct SubscriptionKey(String);
 
 impl SubscriptionKey {
     /// Returns a new Subscription key
-    pub fn new(key: &str) -> SubscriptionKey {
+    pub fn new<S: ToString>(key: S) -> SubscriptionKey {
         SubscriptionKey(key.to_string())
     }
 
@@ -303,9 +305,9 @@ mod tests {
         let mut core = tokio_core::reactor::Core::new().unwrap();
         let handle = core.handle();
         let client = Client::configure()
-            .connector(hyper_tls::HttpsConnector::new(4, &handle))
+            .connector(hyper_tls::HttpsConnector::new(4, &handle).unwrap())
             .build(&handle);
-        let sub_key = SubscriptionKey::new(subscription_key().as_str());
+        let sub_key = SubscriptionKey::new(subscription_key());
         let credentials = Credentials::new(sub_key);
         let engine = Engine::new(credentials, client);
         let work = engine.renew_token();
