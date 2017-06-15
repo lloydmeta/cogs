@@ -1,6 +1,6 @@
 [package]
 name = "cogs"
-version = "0.0.4"
+version = "0.1.1"
 authors = ["Lloyd <lloydmeta@gmail.com>"]
 description = "Non-blocking client for Microsoft Cognition API"
 license = "MIT"
