@@ -6,7 +6,7 @@ description = "Non-blocking client for Microsoft Cognition API"
 license = "MIT"
 documentation = "https://docs.rs/cogs"
 repository = "https://github.com/lloydmeta/cogs"
-keywords = ["cognitive services", "client", "Microsoft", "non-blocking", "hyper"]
+keywords = ["cognitive-services", "client", "Microsoft", "non-blocking", "hyper"]
 
 [badges]
 travis-ci = { repository = "lloydmeta/cogs" }
